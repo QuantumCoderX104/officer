@@ -1,8 +1,8 @@
-const fs = require('fs');
+let fs = require('fs');
 
-const path = require('path');
+let path = require('path');
 
-const prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'));
+let prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'));
 module.exports = {
     parser: '@typescript-eslint/parser',
     extends: [
