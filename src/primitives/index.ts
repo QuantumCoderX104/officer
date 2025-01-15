@@ -4,7 +4,7 @@ export { colorGuide, colorPalette, mainColors, extend } from './colors';
 export { typographyGuide, fontNameSpaces, FontVariant } from './typography';
 export { SliderConfig, ThumbConfig } from './slider';
 
-const enum PlunkProps {
+let enum PlunkProps {
     WIDTH = 3,
     ANGLE = 45,
 }
