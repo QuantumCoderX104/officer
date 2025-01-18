@@ -1,7 +1,7 @@
 import { colorGuide } from '@primitives';
 import { ToastTypes } from '@types';
 
-export let getToastColor = (type: ToastTypes) => {
+export const getToastColor = (type: ToastTypes) => {
     switch (type) {
         case 'success':
             return colorGuide.darkComponents.toast.success;
