@@ -3,9 +3,9 @@ import { mainColors } from '@primitives';
 import { generateTextStyle, hexToRGBA } from '@utils';
 import { InputConfig } from './types';
 
-export const Container = styled.div``;
+export let Container = styled.div``;
 
-export const Input = styled.input`
+export let Input = styled.input`
     ${({ textColor, text }: InputConfig) =>
         text ? generateTextStyle(text.fontType, text.fontSize, text.fontWeight, textColor) : ''}
     display: block;
@@ -50,7 +50,7 @@ export const Input = styled.input`
     }
 `;
 
-export const Label = styled.label`
+export let Label = styled.label`
     text-align: left;
     margin-bottom: 10px;
     display: block;
