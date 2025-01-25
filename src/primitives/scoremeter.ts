@@ -5,7 +5,7 @@ export enum Bureaus {
     equifax = 'equifax',
 }
 
-let scoreConfig = {
+const scoreConfig = {
     excellent: {
         type: 'excellent',
         text: 'Excellent',
@@ -20,7 +20,7 @@ let scoreConfig = {
     },
 };
 
-export let getTypeAndText = (score: number, bureau: string) => {
+export const getTypeAndText = (score: number, bureau: string) => {
     if (bureau === Bureaus.experian && score < 850) {
         return score >= 750 ? scoreConfig.average : scoreConfig.poor;
     } else if (bureau === Bureaus.crif && score < 770) {
@@ -32,7 +32,7 @@ export let getTypeAndText = (score: number, bureau: string) => {
     return scoreConfig.excellent;
 };
 
-let darkScoreMeter = (score: number, bureau: 'crif' | 'experian' | 'equifax') => ({
+const darkScoreMeter = (score: number, bureau: 'crif' | 'experian' | 'equifax') => ({
     colorMode: 'dark',
     reading: score,
     colorConfig: colorGuide.darkComponents.scoremeter,
@@ -40,7 +40,7 @@ let darkScoreMeter = (score: number, bureau: 'crif' | 'experian' | 'equifax') =>
     scoreDesc: getTypeAndText(score, bureau).text,
 });
 
-let lightScoreMeter = (
+const lightScoreMeter = (
     score: number,
     bureau: 'crif' | 'experian' | 'equifax',
     oldScore: number,
@@ -54,7 +54,7 @@ let lightScoreMeter = (
     scoreDesc: getTypeAndText(score, bureau).text,
 });
 
-export let getScoreMeterConfig = {
+export const getScoreMeterConfig = {
     lightScoreMeter,
     darkScoreMeter,
 };
