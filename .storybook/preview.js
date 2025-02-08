@@ -6,14 +6,14 @@ import prettier from 'prettier/standalone';
 import prettierBabel from 'prettier/parser-babel';
 
 // Global decorator to apply the styles to all stories
-export const decorators = [
+export let decorators = [
     (Story) => (
             <Story />
     ),
 ];
 
 // Custom Viewport for better looking
-const CUSTOM_VIEWPORTS = {
+let CUSTOM_VIEWPORTS = {
     iphoneX: {
         name: 'iPhone X',
         styles: {
@@ -56,7 +56,7 @@ addParameters({
     },
 });
 
-export const parameters = {
+export let parameters = {
     docs: {
         transformSource: (input) =>
             prettier.format(input, {
