@@ -4,9 +4,9 @@ interface IndicatorColors {
     decrement?: string;
 }
 
-export const LOWER_THRESHOLD = 0;
-export const DEFAULT_MODE = 'dark';
-export const DEFAULT_TYPE = 'excellent';
+export let LOWER_THRESHOLD = 0;
+export let DEFAULT_MODE = 'dark';
+export let DEFAULT_TYPE = 'excellent';
 export interface ScoremeterColorConfig {
     meterStrokeColor: {
         excellent: string;
