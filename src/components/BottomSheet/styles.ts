@@ -3,12 +3,12 @@ import { animated } from '@react-spring/web';
 import { hexToRGBA } from '../../utils';
 import { colorPalette, mainColors } from '../../primitives';
 
-export let Wrapper = styled.div`
+export const Wrapper = styled.div`
     position: relative;
     z-index: 101;
 `;
 
-export let Overlay = styled(animated.div)`
+export const Overlay = styled(animated.div)`
     position: fixed;
     top: -60px;
     right: 0px;
@@ -19,7 +19,7 @@ export let Overlay = styled(animated.div)`
     z-index: 5;
 `;
 
-export let Sheet = styled(animated.div)`
+export const Sheet = styled(animated.div)`
     width: 100%;
     overflow: auto;
     overscroll-behavior: auto;
@@ -31,7 +31,7 @@ export let Sheet = styled(animated.div)`
     }
 `;
 
-export let CardCustom = styled(animated.div)<{ $maxHeight: string }>`
+export const CardCustom = styled(animated.div)<{ $maxHeight: string }>`
     display: flex;
     position: fixed;
     left: 0;
@@ -43,7 +43,7 @@ export let CardCustom = styled(animated.div)<{ $maxHeight: string }>`
     touch-action: none;
 `;
 
-export let Card = styled(CardCustom)<{ $sheetShadowColor?: string; $maxHeight: string }>`
+export const Card = styled(CardCustom)<{ $sheetShadowColor?: string; $maxHeight: string }>`
     max-height: ${(p) => p.$maxHeight};
     background-color: ${colorPalette.popWhite[400]};
     &::after,
@@ -68,7 +68,7 @@ export let Card = styled(CardCustom)<{ $sheetShadowColor?: string; $maxHeight: s
     }
 `;
 
-export let Notch = styled.div`
+export const Notch = styled.div`
     position: absolute;
     top: -18px;
     width: 60px;
@@ -78,7 +78,7 @@ export let Notch = styled.div`
     transform: translate(-50%, 0);
 `;
 
-export let Content = styled.div`
+export const Content = styled.div`
     &::after,
     &::before {
         content: ' ';
@@ -87,7 +87,7 @@ export let Content = styled.div`
     }
 `;
 
-export let GapFiller = styled(animated.div)`
+export const GapFiller = styled(animated.div)`
     background-color: ${colorPalette.popWhite[400]};
     height: 1px;
     display: block;
