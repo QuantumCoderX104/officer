@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { PlunkProps } from '@primitives';
 import { CardEdgeProps, CardProps } from './types';
 
-let EDGEWIDTH = PlunkProps.WIDTH;
-let SKEW_ANGLE = PlunkProps.ANGLE;
+const EDGEWIDTH = PlunkProps.WIDTH;
+const SKEW_ANGLE = PlunkProps.ANGLE;
 
-export let CardFace = styled.div`
+export const CardFace = styled.div`
     position: relative;
     background-color: ${({ backgroundColor }: CardProps) => backgroundColor ?? 'transparent'};
     /* padding: ${({ fullWidth }: CardProps) => (fullWidth ? '16px 20px' : '12px 20px')}; */
@@ -14,7 +14,7 @@ export let CardFace = styled.div`
     margin: 0 ${EDGEWIDTH}px ${EDGEWIDTH}px 0;
 `;
 
-export let CardEdge = styled.div`
+export const CardEdge = styled.div`
     position: absolute;
     transform-origin: 0% 0%;
     transition: transform ${EDGEWIDTH / 100}s ease;
@@ -37,7 +37,7 @@ export let CardEdge = styled.div`
         background-color: ${({ edgeColors }: CardEdgeProps) => edgeColors?.bottom ?? 'transparent'};
     }
 `;
-export let CardContainer = styled.div`
+export const CardContainer = styled.div`
     display: ${({ fullWidth }: CardProps) => (fullWidth ? 'block' : 'inline-flex')};
     overflow: hidden;
     user-select: none;
