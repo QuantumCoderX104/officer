@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ScoremeterColorConfig, ScoremeterTypes } from './types';
 
-export const MeterContainer = styled.div`
+export let MeterContainer = styled.div`
     position: relative;
     height: 185px;
 `;
@@ -12,7 +12,7 @@ interface StyledScoremeter {
     showIndicators?: boolean;
 }
 
-export const MeterWrapper = styled.div<StyledScoremeter>`
+export let MeterWrapper = styled.div<StyledScoremeter>`
     position: relative;
     width: 160px;
     height: 160px;
@@ -51,7 +51,7 @@ export const MeterWrapper = styled.div<StyledScoremeter>`
     }
 `;
 
-export const ScoreContainer = styled.div<StyledScoremeter>`
+export let ScoreContainer = styled.div<StyledScoremeter>`
     width: 115px;
     height: 115px;
     border-radius: 50%;
@@ -78,7 +78,7 @@ export const ScoreContainer = styled.div<StyledScoremeter>`
     }
 `;
 
-export const MeterSVG = styled.svg`
+export let MeterSVG = styled.svg`
     display: block;
     & .path {
         transition: stroke-dasharray 100ms ease;
@@ -88,7 +88,7 @@ export const MeterSVG = styled.svg`
     }
 `;
 
-export const Legend = styled.div`
+export let Legend = styled.div`
     position: absolute;
     bottom: 0;
     color: #4b4f52;
