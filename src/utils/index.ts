@@ -1,16 +1,16 @@
 import { css } from 'styled-components';
 import { FontType, FontWeights } from '@types';
 
-export let hexToRGBA = (hex: string, alpha: string | number) => {
-    let r = parseInt(hex.slice(1, 3), 16);
-    let g = parseInt(hex.slice(3, 5), 16);
-    let b = parseInt(hex.slice(5, 7), 16);
+export const hexToRGBA = (hex: string, alpha: string | number) => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
 
     if (alpha) return `rgba(${r},${g},${b}, ${alpha})`;
     return `rgb(${r},${g},${b})`;
 };
 
-export let isEmpty = (value: any) =>
+export const isEmpty = (value: any) =>
     value === undefined ||
     value === null ||
     (typeof value === 'string' && value.trim() === '') ||
@@ -19,7 +19,7 @@ export let isEmpty = (value: any) =>
     ((value?.constructor?.name === 'Map' || value?.constructor?.name === 'Set') &&
         value.size === 0);
 
-let Currencies: { [key: string]: any } = {
+const Currencies: { [key: string]: any } = {
     dollar: {
         countryCode: 'US',
         currency: 'USD',
@@ -30,20 +30,20 @@ let Currencies: { [key: string]: any } = {
     },
 };
 
-export let currencyFormatter = (
+export const currencyFormatter = (
     rupees: number | string,
     fallback = '',
     minimumFractionDigits = 0,
     cur = 'inr',
 ) => {
-    let formatNumber = Number(rupees);
+    const formatNumber = Number(rupees);
     if ((formatNumber !== 0 && !formatNumber) || Number.isNaN(formatNumber)) {
         if (fallback) return fallback;
         return '';
     }
     // console.log(cur);
     if (window?.Intl) {
-        let obj = Currencies[cur];
+        const obj = Currencies[cur];
 
         if (obj) {
             return new Intl.NumberFormat(`en-${obj.countryCode}`, {
@@ -59,20 +59,20 @@ export let currencyFormatter = (
     return formatNumber;
 };
 
-export let generateTextStyle = (
+export const generateTextStyle = (
     type = FontType.BODY,
     fontSize = 14,
     fontWeight = FontWeights.REGULAR,
     color = '#FFFFFF',
 ) => {
-    let LINE_HEIGHT_MULTIPLIER = {
+    const LINE_HEIGHT_MULTIPLIER = {
         [FontType.HEADING]: 1.25,
         [FontType.CAPS]: 1.25,
         [FontType.BODY]: 1.5,
         [FontType.SERIF_HEADING]: 1.25,
     };
 
-    let getLetterSpacing = (fType: FontType, fSize: number, fWeight: FontWeights) => {
+    const getLetterSpacing = (fType: FontType, fSize: number, fWeight: FontWeights) => {
         switch (fType) {
             case FontType.HEADING:
                 switch (fWeight) {
@@ -97,7 +97,7 @@ export let generateTextStyle = (
         }
     };
 
-    let letterSpacing = getLetterSpacing(type, fontSize, fontWeight);
+    const letterSpacing = getLetterSpacing(type, fontSize, fontWeight);
 
     return css`
         font-size: ${fontSize}px;
@@ -115,14 +115,14 @@ export let generateTextStyle = (
 };
 
 export function getRandomInt(min: number, max: number): number {
-    let minN = Math.ceil(min);
-    let maxN = Math.floor(max);
+    const minN = Math.ceil(min);
+    const maxN = Math.floor(max);
     return Math.floor(Math.random() * (maxN - minN + 1)) + minN;
 }
 
-export let isImageLoaded = (src: string) =>
+export const isImageLoaded = (src: string) =>
     new Promise((resolve, reject) => {
-        let image = new Image();
+        const image = new Image();
         image.src = src;
         image.addEventListener('load', () => {
             resolve(true);
@@ -138,10 +138,10 @@ function isObject(item: any): boolean {
 
 export function mergeDeep(target: any, ...sources: any[]): any {
     if (!sources.length) return target;
-    let source = sources.shift();
+    const source = sources.shift();
 
     if (isObject(target) && isObject(source)) {
-        for (let key in source) {
+        for (const key in source) {
             if (isObject(source[key])) {
                 if (!target[key]) Object.assign(target, { [key]: {} });
                 mergeDeep(target[key], source[key]);
