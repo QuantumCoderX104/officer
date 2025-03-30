@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { StyledToggleProps } from './types';
 
-export let ToggleBtn = styled.div<StyledToggleProps>`
+export const ToggleBtn = styled.div<StyledToggleProps>`
     width: 40px;
     height: 22px;
     border: 1px solid ${(props) => props.colorConfig.on.switchBorder};
