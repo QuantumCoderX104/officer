@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export let GlobalFonts = createGlobalStyle`
+export const GlobalFonts = createGlobalStyle`
 @font-face {
 		font-family: 'Gilroy';
 		src: url('https://web-assets.cred.club/fonts/Gilroy-ExtraBold.woff') format('woff');
