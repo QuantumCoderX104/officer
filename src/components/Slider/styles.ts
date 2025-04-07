@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SliderProps } from './types';
 
-export const SliderWrapper = styled.div<Pick<SliderProps, 'sliderConfig' | 'thumbConfig'>>`
+export let SliderWrapper = styled.div<Pick<SliderProps, 'sliderConfig' | 'thumbConfig'>>`
     .slider {
         outline: none;
         -webkit-appearance: none;
