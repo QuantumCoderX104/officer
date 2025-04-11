@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { mainColors } from '@primitives';
 import { RadioContainerColorConfig, StyledRadioProps } from './types';
 
-let RADIO_SIZE = 20;
+const RADIO_SIZE = 20;
 
-export let StyledRadio = styled.div<StyledRadioProps>`
+export const StyledRadio = styled.div<StyledRadioProps>`
     display: block;
     position: relative;
     cursor: pointer;
@@ -74,7 +74,7 @@ export let StyledRadio = styled.div<StyledRadioProps>`
     }
 `;
 
-export let RadioLabel = styled.label<RadioContainerColorConfig>`
+export const RadioLabel = styled.label<RadioContainerColorConfig>`
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     --webkit-user-select: none;
