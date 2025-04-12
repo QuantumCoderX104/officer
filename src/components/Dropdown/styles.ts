@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { DropdownConfig } from './types';
 
-export const DropdownContainer = styled.div`
+export let DropdownContainer = styled.div`
     display: inline-flex;
     align-items: center;
     justify-content: center;
