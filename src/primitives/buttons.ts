@@ -22,12 +22,12 @@ import { colorGuide } from './colors';
 import { typographyGuide } from './typography';
 import { ButtonModes, ButtonKinds, ButtonVariants, ButtonSizes } from '../types';
 
-const buttonTypography = typographyGuide.buttons;
+let buttonTypography = typographyGuide.buttons;
 
-export const getButtonColors = (mode: ButtonModes, variant: ButtonVariants, kind: ButtonKinds) => {
-    const colors =
+export let getButtonColors = (mode: ButtonModes, variant: ButtonVariants, kind: ButtonKinds) => {
+    let colors =
         mode === 'dark' ? colorGuide.darkComponents.buttons : colorGuide.lightComponents.buttons;
-    const transparentEdge =
+    let transparentEdge =
         kind === 'elevated'
             ? {
                   top: 'transparent',
@@ -48,7 +48,7 @@ export const getButtonColors = (mode: ButtonModes, variant: ButtonVariants, kind
           };
 };
 
-const getSize = (number: string) => {
+let getSize = (number: string) => {
     switch (number) {
         case '50':
             return 'big';
@@ -63,7 +63,7 @@ const getSize = (number: string) => {
     }
 };
 
-const sizeConfig = {
+let sizeConfig = {
     big: {
         height: '50px',
         padding: '0px 30px',
@@ -81,7 +81,7 @@ const sizeConfig = {
     },
 };
 
-export const getSpacingConfig = (size: ButtonSizes) => {
+export let getSpacingConfig = (size: ButtonSizes) => {
     switch (size) {
         case 'big':
             return sizeConfig.big;
@@ -94,7 +94,7 @@ export const getSpacingConfig = (size: ButtonSizes) => {
     }
 };
 
-export const getTextStyle = (size: ButtonSizes) => {
+export let getTextStyle = (size: ButtonSizes) => {
     switch (size) {
         case 'big':
             return buttonTypography.big;
@@ -110,13 +110,13 @@ export const getTextStyle = (size: ButtonSizes) => {
 /** ****************************************************************************************** */
 // New Configs
 
-export const getButtonConfig = (name: string) => {
-    const colorMode = name.slice(1, 2) === 'l' ? 'light' : 'dark';
-    const variant = name.slice(2, 3) === 's' ? 'secondary' : 'primary';
-    const size = name.slice(3, 5);
-    const kind = name.slice(5, 6) === 'p' ? 'elevated' : 'flat';
-    const arrow = name.slice(6, 7);
-    const config = {
+export let getButtonConfig = (name: string) => {
+    let colorMode = name.slice(1, 2) === 'l' ? 'light' : 'dark';
+    let variant = name.slice(2, 3) === 's' ? 'secondary' : 'primary';
+    let size = name.slice(3, 5);
+    let kind = name.slice(5, 6) === 'p' ? 'elevated' : 'flat';
+    let arrow = name.slice(6, 7);
+    let config = {
         colorConfig: getButtonColors(colorMode, variant, kind),
         spacingConfig: getSpacingConfig(getSize(size)),
         colorMode,
